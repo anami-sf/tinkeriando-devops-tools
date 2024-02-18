@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Allow SSh connections
 # https://www.cyberciti.biz/faq/how-to-install-ssh-on-ubuntu-linux-using-apt-get/
 
