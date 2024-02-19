@@ -1,18 +1,21 @@
 #!/bin/bash
 
-scp -P 22 file.ext username@domain:~/code/scripts/
+set -x
+
+# Configfile
+. copy-files-to-remote/node.config
 
 # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
 # Path to private ssh key
-sshKeyFilePath=~/.ssh/id_rsa_github
+public_key_file_path=~/.ssh/id_ed25519_github
 
 # Generate key pair
-ssh-keygen -t ed25519 -C "anami.127.0.0.1@gmail.com" -N "" -f $sshKeyFilePath 
+ssh-keygen -t ed25519 -C "anami.127.0.0.1@gmail.com" -N "" -f $public_key_file_path 
 
 # Start the ssh-agent in the background.
 eval "$(ssh-agent -s)"
 
-ssh-add $sshKeyFilePath
+ssh-add $public_key_file_path
 
-cat ${sshKeyFilePath}.pub
+cat ${public_key_file_path}.pub
