@@ -55,7 +55,6 @@ echo "Mark the packages as held back to prevent automatic installation, upgrade,
 echo "-------------------------------------------------------------------------" 
 apt-mark hold kubelet kubeadm kubectl
 
-
 echo "-------------------------------------------------------------------------" 
 echo "Verify kubeadm installation"
 echo "-------------------------------------------------------------------------" 
