@@ -22,3 +22,9 @@ git config --global user.name "anami-sf"
 git config --global user.email "anami.127.0.0.1@gmail.com"
 
 vi ~/.ssh/config
+
+<<comment
+Host github.com
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519_github
+comment
