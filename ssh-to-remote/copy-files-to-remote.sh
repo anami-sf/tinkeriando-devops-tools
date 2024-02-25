@@ -2,7 +2,7 @@
 
 set -x
 
-. copy-files-to-remote/node.config
+. ssh-to-remote/node.config
 
 read -p "Enter path to local file: " path_to_local_file
 

@@ -18,4 +18,4 @@ eval "$(ssh-agent -s)"
 
 ssh-add $public_key_file_path
 
-cat ${public_key_file_path}.pub
+cat "$public_key_file_path.pub"
