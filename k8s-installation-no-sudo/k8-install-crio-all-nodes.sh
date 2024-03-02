@@ -90,37 +90,17 @@ for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker c
     do apt-get remove $pkg; 
 done
 
-echo "-------------------------------------------------------------------------"
-echo "Install containerd from Docker repository"
-echo "Setup the repository"
-echo "-------------------------------------------------------------------------"
 apt-get update
-apt-get install ca-certificates curl gnupg
+apt-get install libseccomp
 
-echo "-------------------------------------------------------------------------"
-echo "Add Docker's official GPG key"
-echo "-------------------------------------------------------------------------"
-install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-chmod a+r /etc/apt/keyrings/docker.gpg
+OS="xUbuntu_22.04"
 
-echo "-------------------------------------------------------------------------"
-echo "Add the repository to Apt sources"
-echo "-------------------------------------------------------------------------"
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-  tee /etc/apt/sources.list.d/docker.list > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/libcontainers-archive-keyring.gpg] https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/ /" > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
+echo "deb [signed-by=/usr/share/keyrings/libcontainers-crio-archive-keyring.gpg] https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/$VERSION/$OS/ /" > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable:cri-o:$VERSION.list
+
+mkdir -p /usr/share/keyrings
+curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/Release.key | gpg --dearmor -o /usr/share/keyrings/libcontainers-archive-keyring.gpg
+curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/$VERSION/$OS/Release.key | gpg --dearmor -o /usr/share/keyrings/libcontainers-crio-archive-keyring.gpg
+
 apt-get update
-
-echo "-------------------------------------------------------------------------"
-echo "Install containerd"
-echo "-------------------------------------------------------------------------" 
-# There is no need to intall any other additional docker tools such as the cli or compose
-apt-get install containerd.io
-
-echo "-------------------------------------------------------------------------" 
-echo "Verify that containerd is running"
-echo "-------------------------------------------------------------------------" 
-# TODO: Add conditional
-systemctl status containerd
+apt-get install cri-o cri-o-runc
