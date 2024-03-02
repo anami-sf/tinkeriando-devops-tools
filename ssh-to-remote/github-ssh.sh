@@ -27,4 +27,6 @@ vi ~/.ssh/config
 Host github.com
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_ed25519_github
+
+cat ~/.ssh/id_ed25519_github
 comment
