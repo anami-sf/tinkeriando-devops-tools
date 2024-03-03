@@ -32,7 +32,3 @@ echo "Confirm that calicoctl is installed"
 echo "-------------------------------------------------------------------------"
 
 calicoctl version
-
-anami@pi4-2gb-node1:/usr/local/bin$ sudo kubectl apply -f calico.yaml
-error: error validating "calico.yaml": error validating data: failed to download openapi: Get "https://10.0.0.216:6443/openapi/v2?timeout=32s": 
-dial tcp 10.0.0.216:6443: connect: connection refused; if you choose to ignore these errors, turn validation off with --validate=false
