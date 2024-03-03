@@ -112,4 +112,6 @@ echo "deb [signed-by=/etc/apt/keyrings/cri-o-apt-keyring.gpg] https://pkgs.k8s.i
 apt-get update
 apt-get install -y cri-o kubelet kubeadm kubectl
 
+echo 'cgroup_enable=memory cgroup_memory=1' >> /boot/firmware/cmdline.txt
+
 systemctl start crio.service
