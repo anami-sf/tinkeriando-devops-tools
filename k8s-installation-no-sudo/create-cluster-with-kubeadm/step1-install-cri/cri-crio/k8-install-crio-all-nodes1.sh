@@ -115,3 +115,5 @@ apt-get install -y cri-o kubelet kubeadm kubectl
 echo 'cgroup_enable=memory cgroup_memory=1' >> /boot/firmware/cmdline.txt
 
 systemctl start crio.service
+
+# systemctl status crio.service
