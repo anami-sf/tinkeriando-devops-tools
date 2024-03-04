@@ -9,6 +9,8 @@ sudo systemctl status containerd
 
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.27.2/manifests/tigera-operator.yaml
 
+kubectl get pods -A
+
 echo "-------------------------------------------------------------------------"
 echo "Download the Calico networking manifest for the Kubernetes API datastore"
 echo "-------------------------------------------------------------------------"
@@ -33,6 +35,9 @@ echo "-------------------------------------------------------------------------"
 
 calicoctl version
 
-anami@pi4-2gb-node1:/usr/local/bin$ sudo kubectl apply -f calico.yaml
-error: error validating "calico.yaml": error validating data: failed to download openapi: Get "https://10.0.0.216:6443/openapi/v2?timeout=32s": 
-dial tcp 10.0.0.216:6443: connect: connection refused; if you choose to ignore these errors, turn validation off with --validate=false
+ln -s $(ls /usr/lib64/libpcap.so.1.9.* | tail -n 1) /usr/lib64/libpcap.so.0.8
+ln -s $(ls /usr/lib/aarch64-linux-gnu/libpcap.so.0.8 | tail -n 1) /usr/lib64/libpcap.so.0.8
+
+ln -s /usr/lib/aarch64-linux-gnu/libpcap.so.0.8 /usr/lib64/libpcap.so.0.8
+dpkg -L libpcap0.8
+ldd /usr/lib64/libpcap.so.0.8

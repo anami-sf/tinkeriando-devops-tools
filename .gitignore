@@ -34,3 +34,4 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+k8s-installation-no-sudo/create-cluster-with-kubeadm/step4-join-worker-nodes.txt

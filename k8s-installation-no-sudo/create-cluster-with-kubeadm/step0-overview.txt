@@ -2,7 +2,7 @@
 2. Install container runtime
 3. Install kubeadm
 4. Initialize control-plane node
-5. Install pod network (CNI)
+5. Install pod network (CNI) (only needs to be installed on controlplane)
 6. Join worker nodes to the cluster
 
 Container runtime: containerd
@@ -16,8 +16,3 @@ DHCP ending address: 10.0.0.253
 --pod-network-cidr 10.244.0.0/16
 address of API server, in other words the IP address of the control plane --apiserver-advertise-address
 192.168.0.0/16
-10.0.0
-
-udemy
-VM machines IP network
-192.268.56

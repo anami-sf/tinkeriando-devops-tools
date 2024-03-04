@@ -1,0 +1,2 @@
+sudo kubeadm join 10.0.0.213:6443 --token XXX \
+	--discovery-token-ca-cert-hash XXX

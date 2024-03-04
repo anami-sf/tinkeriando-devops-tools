@@ -27,4 +27,8 @@ vi ~/.ssh/config
 Host github.com
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_ed25519_github
+
+git clone git@github.com:anami-sf/tinkeriando-devops-tools.git
 comment
+
+echo "Host github.com\n  AddKeysToAgent yes\n  IdentityFile ~/.ssh/id_ed25519_github" >> ~/.ssh/config
