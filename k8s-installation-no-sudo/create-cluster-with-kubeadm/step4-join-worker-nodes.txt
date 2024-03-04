@@ -1,5 +1,2 @@
 sudo kubeadm join 10.0.0.213:6443 --token XXX \
 	--discovery-token-ca-cert-hash XXX
-
-sudo kubeadm join 10.0.0.213:6443 --token v0zz7x.11jfp3n04k0li74u \
-	--discovery-token-ca-cert-hash sha256:c141532cbccb40b168d6b6a38ea03c51613ba4bc95dcb15a43e5e9a8aa8ef72b
