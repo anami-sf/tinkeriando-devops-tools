@@ -2,8 +2,6 @@
 
 set -x
 
-ip route show # Look for a line starting with "default via"
-
 echo "-------------------------------------------------------------------------" 
 echo "Initialize control-plane"
 echo "-------------------------------------------------------------------------" 
@@ -23,5 +21,5 @@ echo 'From k8 control-plane node follow instructions in "join-pods-token"'
 echo "-------------------------------------------------------------------------"
 
 mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config

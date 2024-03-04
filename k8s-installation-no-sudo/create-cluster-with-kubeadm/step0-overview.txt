@@ -2,7 +2,7 @@
 2. Install container runtime
 3. Install kubeadm
 4. Initialize control-plane node
-5. Install pod network (CNI)
+5. Install pod network (CNI) (only needs to be installed on controlplane)
 6. Join worker nodes to the cluster
 
 Container runtime: containerd
