@@ -19,7 +19,7 @@ echo "-------------------------------------------------------------------------"
 cp containerd-config.toml /etc/containerd/config.toml
 echo 'cgroup_enable=memory cgroup_memory=1' >> /boot/firmware/cmdline.txt
 
-systemctl restart containerd 
+systemctl restart containerd
 
 echo "-------------------------------------------------------------------------" 
 echo "Install kubeadm, kubelet and kubectl"
