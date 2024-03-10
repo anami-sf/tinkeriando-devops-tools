@@ -15,7 +15,10 @@ eval "$(ssh-agent -s)"
 
 ssh-add $public_key_file_path
 
+echo "========================================================================="
+echo "Public key:"
 cat "$public_key_file_path.pub"
+echo "========================================================================="
 
 git config --global user.name "anami-sf"
 
