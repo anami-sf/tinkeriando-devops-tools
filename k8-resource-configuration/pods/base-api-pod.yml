@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: base-api
+  labels:
+    app: base-api
+spec:
+  containers:
+  - name: base-api
+    image: anami127001/base-api:latest
+    ports:
+      - containerPort: 80
+  imagePullSecrets:
+  - name: regcred
+  
