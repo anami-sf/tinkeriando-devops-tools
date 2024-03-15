@@ -8,6 +8,7 @@
 Container runtime: containerd
 CNI: calico
 
+WAN ipv4: 98.37.9.15
 gateay address 10.0.0.1
 subnet mask: 255.255.255.0
 DHCP beginning address: 10.0.0.2
