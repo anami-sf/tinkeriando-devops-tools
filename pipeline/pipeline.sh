@@ -15,3 +15,12 @@ docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 -t anami1270
 
 # Push Docker image to DockerHub
 docker push anami127001/tinkeriando-ui:latest
+
+# =================================================
+# KUBERNETES configurations
+# =================================================
+kubectl create namespace tinkeriando
+
+# Set react-docker as the default context:
+
+kubectl config set-context --current --namespace=tinkeriando
