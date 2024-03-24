@@ -10,6 +10,4 @@ spec:
     image: anami127001/nginx-reverse-proxy:latest
     ports:
       - containerPort: 80
-  imagePullSecrets:
-  - name: regcred
   
