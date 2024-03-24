@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tinkeriando-ui-deployment
+  labels:
+    app: tinkeriando-ui
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tinkeriando-ui
+  template:
+    metadata:
+      labels:
+        app: tinkeriando-ui
+    spec:
+      containers:
+      - name: tinkeriando-ui
+        image: anami127001/tinkeriando-ui:latest
+        ports:
+        - containerPort: 80

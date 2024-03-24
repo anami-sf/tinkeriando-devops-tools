@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-reverse-proxy-pod
+  labels:
+    app: nginx-reverse-proxy
+spec:
+  containers:
+  - name: nginx-reverse-proxy
+    image: anami127001/nginx-reverse-proxy:latest
+    ports:
+      - containerPort: 80
+  
