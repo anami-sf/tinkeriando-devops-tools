@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+    app: tinkeriando-ui
+  name: ui.tinkeriando.com
+  namespace: tinkeriando
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  rules:
+  # - host: ui.tinkeriando.com
+  - http:
+      paths:
+      - backend:
+          service:
+            name: tinkeriando-ui-service
+            port:
+              number: 80
+        path: /
+        pathType: Prefix

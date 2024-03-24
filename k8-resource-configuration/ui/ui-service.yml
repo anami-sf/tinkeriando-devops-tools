@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tinkeriando-ui-service
+  labels:
+    app: tinkeriando-ui
+spec:
+  type: NodePort
+  selector:
+    app: tinkeriando-ui
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+    # nodePort: By default and for convenience, the Kubernetes control plane
+    # will allocate a port from a range (default: 30000-32767)
+    
