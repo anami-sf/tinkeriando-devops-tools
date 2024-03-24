@@ -5,11 +5,12 @@ metadata:
     app: tinkeriando-ui
   name: ui.tinkeriando.com
   namespace: tinkeriando
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
+  # annotations:
+  #   cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
+  ingressClassName: nginx
   rules:
-  # - host: ui.tinkeriando.com
+  - host: ui.tinkeriando.com
   - http:
       paths:
       - backend:
